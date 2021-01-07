@@ -6,39 +6,3 @@
 
 #IncludeRegexTransform: 
 
-/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/main.cpp
-iostream
--
-matrix.hpp
-/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/matrix.hpp
-boost/python.hpp
--
-
-/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/matrix.hpp
-initializer_list
--
-exception
--
-stdexcept
--
-system_error
--
-iostream
--
-fstream
--
-sstream
--
-cstring
--
-string
--
-complex
--
-regex
--
-iomanip
--
-boost/algorithm/string.hpp
--
-

@@ -1,7 +1,7 @@
 file(REMOVE_RECURSE
-  "CMakeFiles/MatLibraryPy.dir/main.cpp.o"
-  "MatLibraryPy"
+  "CMakeFiles/MatLibraryPy.dir/MatLibraryPy.cpp.o"
   "MatLibraryPy.pdb"
+  "MatLibraryPy.so"
 )
 
 # Per-language clean rules from dependency scanning.

@@ -1,24 +1,16 @@
 cmake_minimum_required(VERSION 2.8.3)
 
-project(mat_lib_gen C CXX)
+# Find python and Boost - both are required dependencies
+find_package(PythonLibs 3.8 REQUIRED)
+find_package(Boost COMPONENTS python REQUIRED)
 
-#message(STATUS "libraries:")
-#
-#message(STATUS "  'mat_lib' will be generated")
-## mat_lib library
-#add_library(
-#  mat_lib
-#  matrix.cpp
-#)
+# Without this, any build libraries automatically have names "lib{x}.so"
+set(CMAKE_SHARED_MODULE_PREFIX "")
 
-find_package(Boost 1.71.0 COMPONENTS program_options REQUIRED)
-include_directories(${Boost_INCLUDE_DIR})
+# Add a shared module - modules are intended to be imported at runtime.
+# - This is where you add the source files
+add_library(MatLibraryPy MODULE MatLibraryPy.cpp)
 
-message(STATUS "targets:")
-# testing_mat_lib
-message(STATUS "  'mat_lib_gen' will be generated")
-add_executable(
-        main
-        main.cpp
-)
-target_link_libraries(main LINK_PUBLIC ${Boost_LIBRARIES})
+# Set up the libraries and header search paths for this target
+target_link_libraries(MatLibraryPy ${Boost_LIBRARIES} ${PYTHON_LIBRARIES})
+target_include_directories(MatLibraryPy PRIVATE ${PYTHON_INCLUDE_DIRS})

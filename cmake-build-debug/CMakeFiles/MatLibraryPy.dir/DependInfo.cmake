@@ -4,12 +4,20 @@ set(CMAKE_DEPENDS_LANGUAGES
   )
 # The set of files for implicit dependencies of each language:
 set(CMAKE_DEPENDS_CHECK_CXX
-  "/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/main.cpp" "/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/cmake-build-debug/CMakeFiles/MatLibraryPy.dir/main.cpp.o"
+  "/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/MatLibraryPy.cpp" "/home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/cmake-build-debug/CMakeFiles/MatLibraryPy.dir/MatLibraryPy.cpp.o"
   )
 set(CMAKE_CXX_COMPILER_ID "GNU")
 
+# Preprocessor definitions for this target.
+set(CMAKE_TARGET_DEFINITIONS_CXX
+  "BOOST_ALL_NO_LIB"
+  "BOOST_PYTHON_DYN_LINK"
+  "MatLibraryPy_EXPORTS"
+  )
+
 # The include file search paths:
 set(CMAKE_CXX_TARGET_INCLUDE_PATH
+  "/usr/include/python3.8"
   )
 
 # Targets to which this target links.

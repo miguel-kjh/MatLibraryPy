@@ -1,1 +1,1 @@
-/usr/bin/c++  -g  -rdynamic CMakeFiles/main.dir/main.cpp.o  -o main  /usr/lib/x86_64-linux-gnu/libboost_program_options.so.1.71.0 
+/usr/bin/c++ -fPIC -g  -shared  -o main.so CMakeFiles/main.dir/main.cpp.o  /usr/lib/x86_64-linux-gnu/libboost_python38.so.1.71.0 -lpython3.8 

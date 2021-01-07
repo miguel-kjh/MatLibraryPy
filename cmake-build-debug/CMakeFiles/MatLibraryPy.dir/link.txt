@@ -1,1 +1,1 @@
-/usr/bin/c++  -g   CMakeFiles/MatLibraryPy.dir/main.cpp.o  -o MatLibraryPy 
+/usr/bin/c++ -fPIC -g  -shared  -o MatLibraryPy.so CMakeFiles/MatLibraryPy.dir/MatLibraryPy.cpp.o  /usr/lib/x86_64-linux-gnu/libboost_python38.so.1.71.0 -lpython3.8 
