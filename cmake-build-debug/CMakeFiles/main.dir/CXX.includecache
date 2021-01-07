@@ -11,6 +11,8 @@ iostream
 -
 matrix.hpp
 /home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/matrix.hpp
+boost/python.hpp
+-
 
 /home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/matrix.hpp
 initializer_list

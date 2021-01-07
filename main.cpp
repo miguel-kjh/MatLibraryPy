@@ -4,6 +4,8 @@ using namespace std;
 #include "matrix.hpp"
 using namespace mat_lib;
 
+#include <boost/python.hpp>
+
 using matrix_t=matrix<double>;
 
 int main(int arc, char* argv[])
