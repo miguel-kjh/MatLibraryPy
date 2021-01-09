@@ -136,6 +136,22 @@ namespace mat_lib
       element_t* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
       const element_t* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
 
+      element_t get(std::size_t row, std::size_t column) const {
+          if (column >= this->columns() || row >= this->rows())
+              throw logic_error("bad dimension");
+          if (column < 0 || row < 0)
+              throw logic_error("rows and columns must be positive integers");
+          return elements__[offset__(column,row)];
+      }
+
+      void set(std::size_t row, std::size_t column, element_t number) {
+          if (column >= this->columns() || row >= this->rows())
+              throw logic_error("bad dimension");
+          if (column < 0 || row < 0)
+              throw logic_error("rows and columns must be positive integers");
+          elements__[offset__(column,row)] = number;
+      }
+
       bool operator==(const matrix& m) const;
 
       matrix& operator+=(const matrix& m);
@@ -165,6 +181,9 @@ namespace mat_lib
       }
 
       void save_as(const string &file_name) const;
+
+      std::string str() const;
+      std::string repr() const;
 
   private:
 
@@ -421,6 +440,18 @@ namespace mat_lib
     }
 
     template<typename T>
+    std::string matrix<T>::str() const {
+        std::stringstream s;
+        s << *this;
+        return s.str();
+    }
+
+    template<typename T>
+    std::string matrix<T>::repr() const {
+        return str();
+    }
+
+    template<typename T>
     format base_matrix<T>::getFormat() const {
         return format__;
     }
@@ -546,6 +577,8 @@ namespace mat_lib
 
     return os;
   }
+
+
 
 
   /**
