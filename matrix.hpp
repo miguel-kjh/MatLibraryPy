@@ -44,7 +44,6 @@ namespace mat_lib
   class matrix: public base_matrix<T>
   {
     public:
-      //using element_t=double;
       using element_t=T;
 
       static_assert(
@@ -630,6 +629,8 @@ namespace mat_lib
               "[ERROR] >>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< [ERROR]\n"
       );
 
+      vector();
+
       vector(size_t maxSize) : max_size__(maxSize) {
           element_t value = 0;
           for(size_t i=0; i<max_size__; i++) container__.push_back(value);
@@ -639,11 +640,18 @@ namespace mat_lib
           for(size_t i=0; i<init.size(); i++) container__.push_back(init.begin()[i]);
       }
 
+      vector(boost::python::list vec): max_size__{static_cast<size_t>(boost::python::len(vec))} {
+          for(size_t i = 0 ; i < max_size__; i++) container__.push_back(boost::python::extract<element_t>(vec[i]));
+      }
+
       explicit vector(const string& file_name); // constructor from a file
 
       size_t size() const {
           return max_size__;
       }
+
+      std::string str() const;
+      std::string repr() const;
 
       void define_random();
 
@@ -671,6 +679,90 @@ namespace mat_lib
           }
 
           return *this;
+      }
+
+      vector operator+(const vector &rhs){
+          if(this->size() != rhs.size()) throw logic_error("bad sum operations");
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < rhs.size(); ++i) {
+              res.set(i,container__[i] + rhs[i]);
+          }
+
+          return res;
+      }
+
+      vector operator+(const element_t rhs){
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < this->size(); ++i) {
+              res.set(i,container__[i] + rhs);
+          }
+
+          return res;
+      }
+
+      vector operator-(const vector &rhs){
+          if(this->size() != rhs.size()) throw logic_error("bad sum operations");
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < rhs.size(); ++i) {
+              res.set(i,container__[i] - rhs[i]);
+          }
+
+          return res;
+      }
+
+      vector operator-(const element_t rhs){
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < this->size(); ++i) {
+              res.set(i,container__[i] - rhs);
+          }
+
+          return res;
+      }
+
+      vector operator*(const vector &rhs){
+          if(this->size() != rhs.size()) throw logic_error("bad sum operations");
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < rhs.size(); ++i) {
+              res.set(i,container__[i] * rhs[i]);
+          }
+
+          return res;
+      }
+
+      vector operator*(const element_t rhs){
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < this->size(); ++i) {
+              res.set(i,container__[i] * rhs);
+          }
+
+          return res;
+      }
+
+      vector operator/(const vector &rhs){
+          if(this->size() != rhs.size()) throw logic_error("bad sum operations");
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < rhs.size(); ++i) {
+              res.set(i,container__[i] - rhs[i]);
+          }
+
+          return res;
+      }
+
+      vector operator/(const element_t rhs){
+          vector<element_t> res(this->size());
+
+          for (int i = 0; i < this->size(); ++i) {
+              res.set(i,container__[i] - rhs);
+          }
+
+          return res;
       }
 
       vector operator*=(const vector &rhs){
@@ -728,6 +820,14 @@ namespace mat_lib
       const element_t operator[](size_t i) const { return container__[i]; }
 
       void save_as(const string& file_name) const;
+
+      element_t get(size_t index){
+          return container__[index];
+      }
+
+      void set(size_t index, element_t value){
+          container__[index] = value;
+      }
 
       format getFormat() const;
 
@@ -842,6 +942,22 @@ namespace mat_lib
             container__[i] = value;
         }
     }
+
+    template<typename T>
+    std::string vector<T>::str() const {
+        std::stringstream s;
+        s << *this;
+        return s.str();
+    }
+
+    template<typename T>
+    std::string vector<T>::repr() const {
+        return str();
+    }
+
+    template<typename T>
+    vector<T>::vector(): max_size__{0}
+    {}
 
     template<typename T>
     vector<T> operator+(const vector<T>& a, const vector<T>& b)

@@ -1,42 +1,74 @@
-from MatLibraryPy import Matrix
+from MatLibraryPy import Matrix, Vector
 
-m = Matrix()
+def test_mat():
 
-m2 = Matrix(3,5)
+	m = Matrix()
 
-#m3 = Matrix([1,2,3,4])
+	m2 = Matrix(3,5)
 
-t = m2.transpose()
-print(m2)
-print(m2.rows())
-print(m2.columns())
-print(m2.size())
-print(t)
+	#m3 = Matrix([1,2,3,4])
 
-m2.saveAs("v.vector")
+	t = m2.transpose()
+	print(m2)
+	print(m2.rows())
+	print(m2.columns())
+	print(m2.size())
+	print(t)
 
-m2 = Matrix("at.matrix")
+	m2.saveAs("v.vector")
 
-print(m2)
+	m2 = Matrix("at.matrix")
 
-print(m2 + m2)
+	print(m2)
 
-print(m2 * m2)
+	print(m2 + m2)
 
-print(5/m2)
+	print(m2 * m2)
 
-inv = m2.inv()
-print(inv)
+	print(5/m2)
 
-print(m2.get(1,0))
-m2.set(1,0,8)
-print(m2.get(1,0))
+	inv = m2.inv()
+	print(inv)
 
-mr = Matrix([[1.5,2],[5,6],[3,9.9]])
+	print(m2.get(1,0))
+	m2.set(1,0,8)
+	print(m2.get(1,0))
 
-print(mr == m2)
+	mr = Matrix([[1.5,2],[5,6],[3,9.9]])
 
-mr2 = Matrix(mr)
-print(mr2)
+	print(mr == m2)
 
-print(mr2 == mr)
+	mr2 = Matrix(mr)
+	print(mr2)
+
+	print(mr2 == mr)
+	
+def test_vec():
+ 	v1 = Vector(3)
+ 	v2 = Vector([1,2,3])
+ 	print(v2)
+ 	v2.saveAs("v.vector")
+ 	v3 = Vector("v.vector")
+ 	print(v3)
+ 	print(v3.size())
+ 	print(v3.isEmpty())
+ 	v1.define(10)
+ 	print(v1)
+ 	v1 += v2
+ 	print(v1)
+ 	print(v1.get(1))
+ 	v1.set(1,5)
+ 	print(v1)
+ 	print(v1 + v2)
+ 	print("suma numero", v1 + 6)
+ 	print("suma numero", 6  + v1)
+ 	print(v1 - v2)
+ 	
+ 	
+line = "#"*10 
+print(line, "test vector", line)	
+test_vec()
+#print(line, "test matrix", line)	
+#test_mat()
+ 	
+ 
