@@ -31,3 +31,12 @@ print(inv)
 print(m2.get(1,0))
 m2.set(1,0,8)
 print(m2.get(1,0))
+
+mr = Matrix([[1.5,2],[5,6],[3,9.9]])
+
+print(mr == m2)
+
+mr2 = Matrix(mr)
+print(mr2)
+
+print(mr2 == mr)

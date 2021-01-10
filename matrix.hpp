@@ -14,8 +14,10 @@
 #include <regex>
 #include <iomanip>
 #include <boost/algorithm/string.hpp>
+#include <boost/python.hpp>
 
 using namespace std;
+
 
 namespace mat_lib
 {
@@ -99,6 +101,28 @@ namespace mat_lib
         m.rows__=m.columns__=0;
       }
 
+      matrix(boost::python::list mat){
+          int len_row = boost::python::len(mat);
+          if (len_row == 0)
+              throw logic_error("can't create empty arrays");
+          int len_col = boost::python::len(mat[0]);
+
+          rows__ = len_row;
+          columns__ = len_col;
+          elements__ = new element_t[rows__ * columns__];
+
+          for (int i = 0; i < len_row; i++) {
+
+              if (columns__ != boost::python::len(mat[i]))
+                  throw logic_error("the array must have the same number of columns");
+
+              for (int j = 0; j < len_col; j++) {
+                  elements__[offset__(i,j)] = boost::python::extract<element_t>(mat[i][j]);
+              }
+          }
+
+      }
+
       explicit matrix(const string& file_name); // constructor from a file
 
       ~matrix() { delete [] elements__; }
@@ -141,7 +165,7 @@ namespace mat_lib
               throw logic_error("bad dimension");
           if (column < 0 || row < 0)
               throw logic_error("rows and columns must be positive integers");
-          return elements__[offset__(column,row)];
+          return elements__[offset__(row,column)];
       }
 
       void set(std::size_t row, std::size_t column, element_t number) {
@@ -149,7 +173,7 @@ namespace mat_lib
               throw logic_error("bad dimension");
           if (column < 0 || row < 0)
               throw logic_error("rows and columns must be positive integers");
-          elements__[offset__(column,row)] = number;
+          elements__[offset__(row,column)] = number;
       }
 
       bool operator==(const matrix& m) const;
