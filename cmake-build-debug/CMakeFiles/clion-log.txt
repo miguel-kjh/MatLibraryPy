@@ -12,6 +12,7 @@ CMake Warning (dev) in CMakeLists.txt:
   line.
 This warning is for project developers.  Use -Wno-dev to suppress it.
 
+-- Found PythonLibs: /usr/lib/x86_64-linux-gnu/libpython3.8.so (found suitable version "3.8.5", minimum required is "3") 
 -- Configuring done
 -- Generating done
 -- Build files have been written to: /home/miguel/Escritorio/SIANI/1 Cuatrimestre/PP/MatLibraryPy/cmake-build-debug

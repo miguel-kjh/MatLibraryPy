@@ -1,7 +1,7 @@
 cmake_minimum_required(VERSION 2.8.3)
 
 # Find python and Boost - both are required dependencies
-find_package(PythonLibs 3.8 REQUIRED)
+find_package(PythonLibs 3 REQUIRED)
 find_package(Boost COMPONENTS python REQUIRED)
 
 # Without this, any build libraries automatically have names "lib{x}.so"

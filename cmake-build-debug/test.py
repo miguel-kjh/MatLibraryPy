@@ -61,14 +61,13 @@ def test_vec():
  	print(v1)
  	print(v1 + v2)
  	print("suma numero", v1 + 6)
- 	print("suma numero", 6  + v1)
  	print(v1 - v2)
  	
  	
 line = "#"*10 
 print(line, "test vector", line)	
 test_vec()
-#print(line, "test matrix", line)	
-#test_mat()
+print(line, "test matrix", line)
+test_mat()
  	
  
