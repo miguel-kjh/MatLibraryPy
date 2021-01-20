@@ -76,9 +76,7 @@ namespace mat_lib
       {}
 
       matrix(
-        initializer_list<
-          initializer_list<element_t>
-        > init
+        initializer_list<initializer_list<element_t>> init
       );
 
       matrix(initializer_list<element_t> init)

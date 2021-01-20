@@ -13,6 +13,7 @@
 #include <complex>
 #include <regex>
 #include <iomanip>
+#include <vector>
 
 
 using namespace std;
@@ -44,7 +45,9 @@ namespace mat_lib
 
         matrix();
         matrix(size_t rows, size_t columns);
-        //matrix(initializer_list<int> init);
+        matrix(vector<double> init);
+        /* matrix(vector<vector<double>> init); */
+        
 
 
         size_t size() const { return rows__*columns__; }
@@ -54,7 +57,14 @@ namespace mat_lib
     private:
         size_t rows__;
         size_t columns__;
-        int* elements__;
+        double* elements__;
+
+       /*  bool check_initilizer_list__(const vector<vector<double>>& init) {
+            auto column_size=init[0].size();
+            for(size_t i=1; i<init.size(); i++)
+                if(init[i].size()!=column_size) return false;
+            return true;
+        } */
 
     };
 

@@ -9,9 +9,6 @@ using namespace mat_lib;
 */
 
 //template<typename T>
-
-
-//template<typename T>
 format base_matrix::getFormat() const {
     return format__;
 }
@@ -48,12 +45,18 @@ matrix::matrix() {
 matrix::matrix(size_t rows, size_t columns) {
     rows__ = rows;
     columns__ = columns;
-    elements__ = new int[rows*columns];
+    elements__ = new double[rows*columns];
 }
 
-/* matrix::matrix(initializer_list<int> init) {
+matrix::matrix(vector<double> init) {
     rows__ = 1;
     columns__ = init.size();
+    elements__ = new double[rows__*columns__];
     for(size_t i=0; i<init.size(); i++) 
-        elements__[i]=init.begin()[i];
+        elements__[i]= init[i];
+}
+
+/* matrix::matrix(vector<vector<double>> init) {
+
 } */
+

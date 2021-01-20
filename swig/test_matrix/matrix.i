@@ -3,17 +3,25 @@
     #include "matrix.hpp"
 %}
 
+%include "std_vector.i"
+
+namespace std {
+    %template(line) vector <double>;
+}
+
 namespace mat_lib {
+
+    
 
     enum format {
         scientific,
         fixed
     };
     
-    //template<typename T>
+
+    
     class base_matrix{
     public:
-        //base_matrix(int);
         format getFormat() const;
         int getFractionalDigits() const;
         void setFormat(format format);
@@ -25,7 +33,7 @@ namespace mat_lib {
     public:
         matrix();
         matrix(size_t rows, size_t columns);
-        //matrix(initializer_list<int> init);
+        matrix(std::vector<double> init);
 
 
         size_t size() const;
@@ -33,9 +41,6 @@ namespace mat_lib {
         size_t columns() const;
 
     };
-
-    //%template(base_matrixInt) base_matrix<int>;
-    //%template(base_matrixDouble) base_matrix<double>;
 
 }
 
