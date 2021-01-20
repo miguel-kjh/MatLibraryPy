@@ -2,10 +2,14 @@
 
 using namespace mat_lib;
 
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ""
+                Definition of class base_matrix
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "
+*/
+
 //template<typename T>
-base_matrix::base_matrix(int value) {
-    fractional_digits__ = value;
-}
+
 
 //template<typename T>
 format base_matrix::getFormat() const {
@@ -27,3 +31,29 @@ void base_matrix::setFractionalDigits(int fractionalDigits) {
     if (fractionalDigits <= 0) throw logic_error("bad decimal precision");
     fractional_digits__ = fractionalDigits;
 }
+
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ""
+                Definition of class matrix
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "
+*/
+
+matrix::matrix() {
+    rows__ = 0;
+    columns__ = 0;
+    elements__ = nullptr;
+}
+
+matrix::matrix(size_t rows, size_t columns) {
+    rows__ = rows;
+    columns__ = columns;
+    elements__ = new int[rows*columns];
+}
+
+/* matrix::matrix(initializer_list<int> init) {
+    rows__ = 1;
+    columns__ = init.size();
+    for(size_t i=0; i<init.size(); i++) 
+        elements__[i]=init.begin()[i];
+} */

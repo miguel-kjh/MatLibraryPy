@@ -67,9 +67,6 @@ class base_matrix(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
 
-    def __init__(self, arg2):
-        _matrix.base_matrix_swiginit(self, _matrix.new_base_matrix(arg2))
-
     def getFormat(self):
         return _matrix.base_matrix_getFormat(self)
 
@@ -81,10 +78,33 @@ class base_matrix(object):
 
     def setFractionalDigits(self, fractionalDigits):
         return _matrix.base_matrix_setFractionalDigits(self, fractionalDigits)
+
+    def __init__(self):
+        _matrix.base_matrix_swiginit(self, _matrix.new_base_matrix())
     __swig_destroy__ = _matrix.delete_base_matrix
 
 # Register base_matrix in _matrix:
 _matrix.base_matrix_swigregister(base_matrix)
+
+class matrix(base_matrix):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self, *args):
+        _matrix.matrix_swiginit(self, _matrix.new_matrix(*args))
+
+    def size(self):
+        return _matrix.matrix_size(self)
+
+    def rows(self):
+        return _matrix.matrix_rows(self)
+
+    def columns(self):
+        return _matrix.matrix_columns(self)
+    __swig_destroy__ = _matrix.delete_matrix
+
+# Register matrix in _matrix:
+_matrix.matrix_swigregister(matrix)
 
 
 

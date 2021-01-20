@@ -20,23 +20,42 @@ using namespace std;
 namespace mat_lib
 {
 
-  enum format{
-      scientific,
-      fixed
-  };
+    enum format {
+        scientific,
+        fixed
+    };
 
   //template<typename T>
-  class base_matrix{
+    class base_matrix {
     public:
-        base_matrix(int);
+        
         format getFormat() const;
         int getFractionalDigits() const;
         void setFormat(format format);
         void setFractionalDigits(int fractionalDigits);
 
     protected:
-        format format__         = fixed;
+        format format__ = fixed;
         int fractional_digits__ = 6;
+    };
+
+    class matrix: public base_matrix {
+    public:
+
+        matrix();
+        matrix(size_t rows, size_t columns);
+        //matrix(initializer_list<int> init);
+
+
+        size_t size() const { return rows__*columns__; }
+        size_t rows() const { return rows__; }
+        size_t columns() const { return columns__; }
+
+    private:
+        size_t rows__;
+        size_t columns__;
+        int* elements__;
+
     };
 
 }
