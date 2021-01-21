@@ -54,3 +54,5 @@ matrix.output(c)
 print(c == c)
 print(c == c_sum)
 print(c == c_subs)
+
+c.save_as("output.txt")

@@ -169,6 +169,43 @@ bool matrix::operator==(const matrix& m) const
 }
 
 
+
+void matrix::save_as(const string& file_name) const {
+  ofstream ofs(file_name);
+  if(!ofs)
+  {
+    ostringstream str_stream;
+    str_stream<<"cannot open file \""<<file_name<<"\"! ("
+      <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+    throw logic_error(str_stream.str());
+  }
+
+  if(this->format__ == fixed)
+      ofs << std::fixed << setprecision(this->fractional_digits__) << *this;
+  else
+      ofs << std::scientific << setprecision(this->fractional_digits__) << *this;
+}
+
+ostream& mat_lib::operator<<(ostream& os, const matrix& m)
+{
+    static const char* prefix="  ";
+    size_t i,j;
+
+    os<<"mat_lib::matrix["<<m.rows()<<"x"<<m.columns()<<"]{";
+    for(i=0; i<m.rows(); i++)
+    {
+    os<<"\n"<<prefix;
+    for(j=0; j<m.columns()-1; j++) os<<m[i][j]<<", ";
+    if (m.getFormat() == mat_lib::fixed)
+        os << std::fixed << setprecision(m.getFractionalDigits()) << m[i][j];
+    else
+        os << std::scientific << setprecision(m.getFractionalDigits()) << m[i][j];
+    }
+    os<<"\n}";
+
+    return os;
+}
+
 /* ostream& mat_lib::output(ostream& os, const matrix& m)
   {
     static const char* prefix="  ";

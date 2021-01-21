@@ -66,6 +66,7 @@ namespace mat_lib
         double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
         const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
 
+        void save_as(const string &file_name) const;
 
     private:
         size_t rows__;
@@ -93,7 +94,10 @@ namespace mat_lib
          
     };
 
+    
+
     //ostream& output(ostream& os, const matrix& m);
+    ostream& operator<<(ostream& os, const matrix& m);
     void output(const matrix& m);
 
 }

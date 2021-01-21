@@ -4,7 +4,7 @@
 %}
 
 %include "std_vector.i"
-%include "std_iostream.i"
+%include "std_string.i"
 
 namespace std {
     %template(line) vector <double>;
@@ -47,6 +47,7 @@ namespace mat_lib {
         matrix& operator/=(double scalar);
         bool operator==(const matrix& m) const;
 
+        void save_as(const std::string& file_name);
         
     };
 
