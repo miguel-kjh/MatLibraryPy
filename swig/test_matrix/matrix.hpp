@@ -47,6 +47,7 @@ namespace mat_lib
         matrix(size_t rows, size_t columns);
         matrix(vector<double> init);
         matrix(vector<vector<double>> init);
+        explicit matrix(const string& file_name);
         
 
 

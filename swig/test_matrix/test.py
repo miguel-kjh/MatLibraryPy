@@ -56,3 +56,7 @@ print(c == c_sum)
 print(c == c_subs)
 
 c.save_as("output.txt")
+
+load_matrix = matrix.matrix("output.txt")
+
+matrix.output(load_matrix)

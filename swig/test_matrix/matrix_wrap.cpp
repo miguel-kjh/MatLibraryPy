@@ -9705,6 +9705,34 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_new_matrix__SWIG_4(PyObject *SWIGUNUSEDPARM(self), Py_ssize_t nobjs, PyObject **swig_obj) {
+  PyObject *resultobj = 0;
+  std::string *arg1 = 0 ;
+  int res1 = SWIG_OLDOBJ ;
+  mat_lib::matrix *result = 0 ;
+  
+  if ((nobjs < 1) || (nobjs > 1)) SWIG_fail;
+  {
+    std::string *ptr = (std::string *)0;
+    res1 = SWIG_AsPtr_std_string(swig_obj[0], &ptr);
+    if (!SWIG_IsOK(res1)) {
+      SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "new_matrix" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    if (!ptr) {
+      SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "new_matrix" "', argument " "1"" of type '" "std::string const &""'"); 
+    }
+    arg1 = ptr;
+  }
+  result = (mat_lib::matrix *)new mat_lib::matrix((std::string const &)*arg1);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_NEW |  0 );
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return resultobj;
+fail:
+  if (SWIG_IsNewObj(res1)) delete arg1;
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_new_matrix(PyObject *self, PyObject *args) {
   Py_ssize_t argc;
   PyObject *argv[3] = {
@@ -9718,10 +9746,10 @@ SWIGINTERN PyObject *_wrap_new_matrix(PyObject *self, PyObject *args) {
   }
   if (argc == 1) {
     int _v;
-    int res = swig::asptr(argv[0], (std::vector< double,std::allocator< double > >**)(0));
+    int res = SWIG_AsPtr_std_string(argv[0], (std::string**)(0));
     _v = SWIG_CheckState(res);
     if (_v) {
-      return _wrap_new_matrix__SWIG_2(self, argc, argv);
+      return _wrap_new_matrix__SWIG_4(self, argc, argv);
     }
   }
   if (argc == 1) {
@@ -9730,6 +9758,14 @@ SWIGINTERN PyObject *_wrap_new_matrix(PyObject *self, PyObject *args) {
     _v = SWIG_CheckState(res);
     if (_v) {
       return _wrap_new_matrix__SWIG_3(self, argc, argv);
+    }
+  }
+  if (argc == 1) {
+    int _v;
+    int res = swig::asptr(argv[0], (std::vector< double,std::allocator< double > >**)(0));
+    _v = SWIG_CheckState(res);
+    if (_v) {
+      return _wrap_new_matrix__SWIG_2(self, argc, argv);
     }
   }
   if (argc == 2) {
@@ -9755,7 +9791,8 @@ fail:
     "    mat_lib::matrix::matrix()\n"
     "    mat_lib::matrix::matrix(size_t,size_t)\n"
     "    mat_lib::matrix::matrix(std::vector< double,std::allocator< double > >)\n"
-    "    mat_lib::matrix::matrix(std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >)\n");
+    "    mat_lib::matrix::matrix(std::vector< std::vector< double,std::allocator< double > >,std::allocator< std::vector< double,std::allocator< double > > > >)\n"
+    "    mat_lib::matrix::matrix(std::string const &)\n");
   return 0;
 }
 

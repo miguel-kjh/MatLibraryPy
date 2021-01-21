@@ -73,6 +73,47 @@ matrix::matrix(vector<vector<double>> init) {
     for(size_t i=0; i<init.size(); i++)
       for(size_t j=0; j<init.begin()[i].size(); j++)
         elements__[offset__(i,j)]=init.begin()[i].begin()[j];
+}
+
+matrix::matrix(const string& file_name) // constructor from a file
+  {
+    string line;
+    ifstream ifs(file_name);
+    if(!ifs)
+    {
+      ostringstream str_stream;
+      str_stream<<"cannot open file \""<<file_name<<"\"! ("
+        <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+      throw logic_error(str_stream.str());
+    }
+    
+    smatch m;
+    regex matlib("mat_lib::matrix\\[.*\\]\\{$");
+    regex numbers("(([+|-])?\\d+(\\.\\d+)?([e|E]([+|-])?\\d+)?)"); // hay que poner la regex para doubles y operaciones cientificas 
+    getline(ifs,line);
+    
+    if ( !(regex_search(line,m,matlib))) {
+      ostringstream str_stream;
+      str_stream<<"Invalid standard for mat_lib("
+        <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+      throw invalid_argument(str_stream.str());
+    }
+
+    regex_search(line,m,numbers);
+    rows__ = stod(m[0]);
+    line = m.suffix().str();
+    regex_search(line,m,numbers);
+    columns__ = stod(m[0]);
+
+    elements__ = new double[rows__*columns__];
+    for(size_t i=0; i< rows__; i++){
+      getline(ifs,line);
+      for(size_t j=0; j<columns__; j++){
+        regex_search(line,m,numbers);
+        elements__[offset__(i,j)] = stod(m[0]);
+        line = m.suffix().str();
+      }
+    }
   }
 
 /*

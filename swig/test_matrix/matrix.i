@@ -33,6 +33,7 @@ namespace mat_lib {
         matrix(size_t rows, size_t columns);
         matrix(std::vector<double> init);
         matrix(std::vector<std::vector<double>> init);
+        explicit matrix(const std::string& file_name);
 
 
         size_t size() const;
