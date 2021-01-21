@@ -39,11 +39,20 @@ namespace mat_lib {
         size_t rows() const;
         size_t columns() const;
 
+        //matrix& operator=(const matrix& m);
+        //matrix& operator=(matrix&& m);
+        matrix& operator+=(const matrix& m);
+        matrix& operator-=(const matrix& m);
+        matrix& operator*=(double scalar);
+        matrix& operator/=(double scalar);
+        bool operator==(const matrix& m) const;
+
         
     };
 
-    ostream& output(ostream& os, const matrix& m);
-    
+    //ostream& output(ostream& os, const matrix& m);
+    void output(const matrix& m);
+
    
 
 }

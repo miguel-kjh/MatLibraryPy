@@ -29,6 +29,28 @@ print("El tamaño de la matriz c: ", c.size())
 print("Las filas de la matriz c: ", c.rows())
 print("Las columnas de la matriz c: ", c.columns())
 
+c_sum = matrix.matrix([[10,10,10,10],[10,10,10,10]])
+c_subs = matrix.matrix([[100,100,100,100],[100,100,100,100]])
+
+matrix.output(c)
+
+c += c_sum
+
+matrix.output(c)
+
+c -= c_subs
+
+matrix.output(c)
+
+c_sum *= 2
+
+matrix.output(c_sum)
 
 
-#matrix.output(sys.stdout,c)
+c = c_subs
+
+matrix.output(c)
+
+print(c == c)
+print(c == c_sum)
+print(c == c_subs)

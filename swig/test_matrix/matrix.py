@@ -775,13 +775,31 @@ class matrix(base_matrix):
 
     def columns(self):
         return _matrix.matrix_columns(self)
+
+    def __iadd__(self, m):
+        return _matrix.matrix___iadd__(self, m)
+
+    def __isub__(self, m):
+        return _matrix.matrix___isub__(self, m)
+
+    def __imul__(self, scalar):
+        return _matrix.matrix___imul__(self, scalar)
+
+    def __itruediv__(self, *args):
+        return _matrix.matrix___itruediv__(self, *args)
+    __idiv__ = __itruediv__
+
+
+
+    def __eq__(self, m):
+        return _matrix.matrix___eq__(self, m)
     __swig_destroy__ = _matrix.delete_matrix
 
 # Register matrix in _matrix:
 _matrix.matrix_swigregister(matrix)
 
 
-def output(os, m):
-    return _matrix.output(os, m)
+def output(m):
+    return _matrix.output(m)
 
 

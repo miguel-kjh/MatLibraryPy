@@ -2725,43 +2725,42 @@ SWIGINTERN PyObject *SWIG_PyStaticMethod_New(PyObject *SWIGUNUSEDPARM(self), PyO
 #define SWIGTYPE_p_mat_lib__matrix swig_types[30]
 #define SWIGTYPE_p_off_type swig_types[31]
 #define SWIGTYPE_p_openmode swig_types[32]
-#define SWIGTYPE_p_ostream swig_types[33]
-#define SWIGTYPE_p_p_PyObject swig_types[34]
-#define SWIGTYPE_p_p_void swig_types[35]
-#define SWIGTYPE_p_pos_type swig_types[36]
-#define SWIGTYPE_p_reference swig_types[37]
-#define SWIGTYPE_p_seekdir swig_types[38]
-#define SWIGTYPE_p_short swig_types[39]
-#define SWIGTYPE_p_size_t swig_types[40]
-#define SWIGTYPE_p_size_type swig_types[41]
-#define SWIGTYPE_p_state_type swig_types[42]
-#define SWIGTYPE_p_std__allocatorT_char_t swig_types[43]
-#define SWIGTYPE_p_std__allocatorT_double_t swig_types[44]
-#define SWIGTYPE_p_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t swig_types[45]
-#define SWIGTYPE_p_std__basic_iosT_char_std__char_traitsT_char_t_t swig_types[46]
-#define SWIGTYPE_p_std__basic_iostreamT_char_std__char_traitsT_char_t_t swig_types[47]
-#define SWIGTYPE_p_std__basic_istreamT_char_std__char_traitsT_char_t_t swig_types[48]
-#define SWIGTYPE_p_std__basic_ostreamT_char_std__char_traitsT_char_t_t swig_types[49]
-#define SWIGTYPE_p_std__basic_streambufT_char_std__char_traitsT_char_t_t swig_types[50]
-#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t swig_types[51]
-#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t__iterator swig_types[52]
-#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t__reverse_iterator swig_types[53]
-#define SWIGTYPE_p_std__invalid_argument swig_types[54]
-#define SWIGTYPE_p_std__ios_base swig_types[55]
-#define SWIGTYPE_p_std__locale swig_types[56]
-#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[57]
-#define SWIGTYPE_p_std__vectorT_std__vectorT_double_std__allocatorT_double_t_t_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t_t swig_types[58]
-#define SWIGTYPE_p_streamoff swig_types[59]
-#define SWIGTYPE_p_streampos swig_types[60]
-#define SWIGTYPE_p_swig__SwigPyIterator swig_types[61]
-#define SWIGTYPE_p_traits_type swig_types[62]
-#define SWIGTYPE_p_unsigned_int swig_types[63]
-#define SWIGTYPE_p_unsigned_long swig_types[64]
-#define SWIGTYPE_p_unsigned_long_long swig_types[65]
-#define SWIGTYPE_p_unsigned_short swig_types[66]
-#define SWIGTYPE_p_value_type swig_types[67]
-static swig_type_info *swig_types[69];
-static swig_module_info swig_module = {swig_types, 68, 0, 0, 0, 0};
+#define SWIGTYPE_p_p_PyObject swig_types[33]
+#define SWIGTYPE_p_p_void swig_types[34]
+#define SWIGTYPE_p_pos_type swig_types[35]
+#define SWIGTYPE_p_reference swig_types[36]
+#define SWIGTYPE_p_seekdir swig_types[37]
+#define SWIGTYPE_p_short swig_types[38]
+#define SWIGTYPE_p_size_t swig_types[39]
+#define SWIGTYPE_p_size_type swig_types[40]
+#define SWIGTYPE_p_state_type swig_types[41]
+#define SWIGTYPE_p_std__allocatorT_char_t swig_types[42]
+#define SWIGTYPE_p_std__allocatorT_double_t swig_types[43]
+#define SWIGTYPE_p_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t swig_types[44]
+#define SWIGTYPE_p_std__basic_iosT_char_std__char_traitsT_char_t_t swig_types[45]
+#define SWIGTYPE_p_std__basic_iostreamT_char_std__char_traitsT_char_t_t swig_types[46]
+#define SWIGTYPE_p_std__basic_istreamT_char_std__char_traitsT_char_t_t swig_types[47]
+#define SWIGTYPE_p_std__basic_ostreamT_char_std__char_traitsT_char_t_t swig_types[48]
+#define SWIGTYPE_p_std__basic_streambufT_char_std__char_traitsT_char_t_t swig_types[49]
+#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t swig_types[50]
+#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t__iterator swig_types[51]
+#define SWIGTYPE_p_std__basic_stringT_char_std__char_traitsT_char_t_std__allocatorT_char_t_t__reverse_iterator swig_types[52]
+#define SWIGTYPE_p_std__invalid_argument swig_types[53]
+#define SWIGTYPE_p_std__ios_base swig_types[54]
+#define SWIGTYPE_p_std__locale swig_types[55]
+#define SWIGTYPE_p_std__vectorT_double_std__allocatorT_double_t_t swig_types[56]
+#define SWIGTYPE_p_std__vectorT_std__vectorT_double_std__allocatorT_double_t_t_std__allocatorT_std__vectorT_double_std__allocatorT_double_t_t_t_t swig_types[57]
+#define SWIGTYPE_p_streamoff swig_types[58]
+#define SWIGTYPE_p_streampos swig_types[59]
+#define SWIGTYPE_p_swig__SwigPyIterator swig_types[60]
+#define SWIGTYPE_p_traits_type swig_types[61]
+#define SWIGTYPE_p_unsigned_int swig_types[62]
+#define SWIGTYPE_p_unsigned_long swig_types[63]
+#define SWIGTYPE_p_unsigned_long_long swig_types[64]
+#define SWIGTYPE_p_unsigned_short swig_types[65]
+#define SWIGTYPE_p_value_type swig_types[66]
+static swig_type_info *swig_types[68];
+static swig_module_info swig_module = {swig_types, 67, 0, 0, 0, 0};
 #define SWIG_TypeQuery(name) SWIG_TypeQueryModule(&swig_module, &swig_module, name)
 #define SWIG_MangledTypeQuery(name) SWIG_MangledTypeQueryModule(&swig_module, &swig_module, name)
 
@@ -21244,6 +21243,167 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_matrix___iadd__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  mat_lib::matrix *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  mat_lib::matrix *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "matrix___iadd__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix___iadd__" "', argument " "1"" of type '" "mat_lib::matrix *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "matrix___iadd__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "matrix___iadd__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  arg2 = reinterpret_cast< mat_lib::matrix * >(argp2);
+  result = (mat_lib::matrix *) &(arg1)->operator +=((mat_lib::matrix const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_matrix___isub__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  mat_lib::matrix *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  mat_lib::matrix *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "matrix___isub__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix___isub__" "', argument " "1"" of type '" "mat_lib::matrix *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "matrix___isub__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "matrix___isub__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  arg2 = reinterpret_cast< mat_lib::matrix * >(argp2);
+  result = (mat_lib::matrix *) &(arg1)->operator -=((mat_lib::matrix const &)*arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_matrix___imul__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  mat_lib::matrix *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "matrix___imul__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix___imul__" "', argument " "1"" of type '" "mat_lib::matrix *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "matrix___imul__" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  result = (mat_lib::matrix *) &(arg1)->operator *=(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_matrix___itruediv__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  double arg2 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  double val2 ;
+  int ecode2 = 0 ;
+  PyObject *swig_obj[2] ;
+  mat_lib::matrix *result = 0 ;
+  
+  if (!SWIG_Python_UnpackTuple(args, "matrix___itruediv__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_DISOWN |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix___itruediv__" "', argument " "1"" of type '" "mat_lib::matrix *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  ecode2 = SWIG_AsVal_double(swig_obj[1], &val2);
+  if (!SWIG_IsOK(ecode2)) {
+    SWIG_exception_fail(SWIG_ArgError(ecode2), "in method '" "matrix___itruediv__" "', argument " "2"" of type '" "double""'");
+  } 
+  arg2 = static_cast< double >(val2);
+  result = (mat_lib::matrix *) &(arg1)->operator /=(arg2);
+  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
+SWIGINTERN PyObject *_wrap_matrix___eq__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  mat_lib::matrix *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  bool result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "matrix___eq__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix___eq__" "', argument " "1"" of type '" "mat_lib::matrix const *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "matrix___eq__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "matrix___eq__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  arg2 = reinterpret_cast< mat_lib::matrix * >(argp2);
+  result = (bool)((mat_lib::matrix const *)arg1)->operator ==((mat_lib::matrix const &)*arg2);
+  resultobj = SWIG_From_bool(static_cast< bool >(result));
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
 SWIGINTERN PyObject *_wrap_delete_matrix(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
@@ -21279,34 +21439,23 @@ SWIGINTERN PyObject *matrix_swiginit(PyObject *SWIGUNUSEDPARM(self), PyObject *a
 
 SWIGINTERN PyObject *_wrap_output(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
-  ostream *arg1 = 0 ;
-  mat_lib::matrix *arg2 = 0 ;
+  mat_lib::matrix *arg1 = 0 ;
   void *argp1 = 0 ;
   int res1 = 0 ;
-  void *argp2 = 0 ;
-  int res2 = 0 ;
-  PyObject *swig_obj[2] ;
-  ostream *result = 0 ;
+  PyObject *swig_obj[1] ;
   
-  if (!SWIG_Python_UnpackTuple(args, "output", 2, 2, swig_obj)) SWIG_fail;
-  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_ostream,  0 );
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
   if (!SWIG_IsOK(res1)) {
-    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "output" "', argument " "1"" of type '" "ostream &""'"); 
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "output" "', argument " "1"" of type '" "mat_lib::matrix const &""'"); 
   }
   if (!argp1) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "output" "', argument " "1"" of type '" "ostream &""'"); 
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "output" "', argument " "1"" of type '" "mat_lib::matrix const &""'"); 
   }
-  arg1 = reinterpret_cast< ostream * >(argp1);
-  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
-  if (!SWIG_IsOK(res2)) {
-    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "output" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
-  }
-  if (!argp2) {
-    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "output" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
-  }
-  arg2 = reinterpret_cast< mat_lib::matrix * >(argp2);
-  result = (ostream *) &mat_lib::output(*arg1,(mat_lib::matrix const &)*arg2);
-  resultobj = SWIG_NewPointerObj(SWIG_as_voidptr(result), SWIGTYPE_p_ostream, 0 |  0 );
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  mat_lib::output((mat_lib::matrix const &)*arg1);
+  resultobj = SWIG_Py_Void();
   return resultobj;
 fail:
   return NULL;
@@ -21533,10 +21682,15 @@ static PyMethodDef SwigMethods[] = {
 	 { "matrix_size", _wrap_matrix_size, METH_O, NULL},
 	 { "matrix_rows", _wrap_matrix_rows, METH_O, NULL},
 	 { "matrix_columns", _wrap_matrix_columns, METH_O, NULL},
+	 { "matrix___iadd__", _wrap_matrix___iadd__, METH_VARARGS, NULL},
+	 { "matrix___isub__", _wrap_matrix___isub__, METH_VARARGS, NULL},
+	 { "matrix___imul__", _wrap_matrix___imul__, METH_VARARGS, NULL},
+	 { "matrix___itruediv__", _wrap_matrix___itruediv__, METH_VARARGS, NULL},
+	 { "matrix___eq__", _wrap_matrix___eq__, METH_VARARGS, NULL},
 	 { "delete_matrix", _wrap_delete_matrix, METH_O, NULL},
 	 { "matrix_swigregister", matrix_swigregister, METH_O, NULL},
 	 { "matrix_swiginit", matrix_swiginit, METH_VARARGS, NULL},
-	 { "output", _wrap_output, METH_VARARGS, NULL},
+	 { "output", _wrap_output, METH_O, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
@@ -21637,7 +21791,6 @@ static swig_type_info _swigt__p_mat_lib__base_matrix = {"_p_mat_lib__base_matrix
 static swig_type_info _swigt__p_mat_lib__matrix = {"_p_mat_lib__matrix", "mat_lib::matrix *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_off_type = {"_p_off_type", "off_type *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_openmode = {"_p_openmode", "openmode *", 0, 0, (void*)0, 0};
-static swig_type_info _swigt__p_ostream = {"_p_ostream", "ostream *", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_PyObject = {"_p_p_PyObject", "PyObject **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_p_void = {"_p_p_void", "void **", 0, 0, (void*)0, 0};
 static swig_type_info _swigt__p_pos_type = {"_p_pos_type", "pos_type *", 0, 0, (void*)0, 0};
@@ -21707,7 +21860,6 @@ static swig_type_info *swig_type_initial[] = {
   &_swigt__p_mat_lib__matrix,
   &_swigt__p_off_type,
   &_swigt__p_openmode,
-  &_swigt__p_ostream,
   &_swigt__p_p_PyObject,
   &_swigt__p_p_void,
   &_swigt__p_pos_type,
@@ -21777,7 +21929,6 @@ static swig_cast_info _swigc__p_mat_lib__base_matrix[] = {  {&_swigt__p_mat_lib_
 static swig_cast_info _swigc__p_mat_lib__matrix[] = {  {&_swigt__p_mat_lib__matrix, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_off_type[] = {  {&_swigt__p_off_type, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_openmode[] = {  {&_swigt__p_openmode, 0, 0, 0},{0, 0, 0, 0}};
-static swig_cast_info _swigc__p_ostream[] = {  {&_swigt__p_ostream, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_PyObject[] = {  {&_swigt__p_p_PyObject, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_p_void[] = {  {&_swigt__p_p_void, 0, 0, 0},{0, 0, 0, 0}};
 static swig_cast_info _swigc__p_pos_type[] = {  {&_swigt__p_pos_type, 0, 0, 0},{0, 0, 0, 0}};
@@ -21847,7 +21998,6 @@ static swig_cast_info *swig_cast_initial[] = {
   _swigc__p_mat_lib__matrix,
   _swigc__p_off_type,
   _swigc__p_openmode,
-  _swigc__p_ostream,
   _swigc__p_p_PyObject,
   _swigc__p_p_void,
   _swigc__p_pos_type,

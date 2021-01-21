@@ -54,9 +54,17 @@ namespace mat_lib
         size_t rows() const { return rows__; }
         size_t columns() const { return columns__; }
 
+        matrix& operator=(const matrix& m);
+        matrix& operator=(matrix&& m);
+        matrix& operator+=(const matrix& m);
+        matrix& operator-=(const matrix& m);
+        matrix& operator*=(double scalar);
+        matrix& operator/=(double scalar);
+        bool operator==(const matrix& m) const;
 
-      double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
-      const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
+
+        double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
+        const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
 
 
     private:
@@ -71,6 +79,12 @@ namespace mat_lib
             return true;
         }
 
+        void copy_elements__(const matrix& m) { 
+            rows__=m.rows__; columns__=m.columns__;
+            for(size_t i=0; i<rows__; i++) 
+            for(size_t j=0; j<columns__; j++) elements__[offset__(i,j)]=m.elements__[offset__(i,j)]; 
+        }
+
             
         size_t row_offset__(size_t i) const { return i*columns__; }
         size_t offset__(size_t i,int j) const { return row_offset__(i)+j; }
@@ -79,7 +93,8 @@ namespace mat_lib
          
     };
 
-    ostream& output(ostream& os, const matrix& m);
+    //ostream& output(ostream& os, const matrix& m);
+    void output(const matrix& m);
 
 }
 
