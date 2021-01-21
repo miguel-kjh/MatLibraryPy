@@ -1,5 +1,5 @@
 import matrix
-
+import sys
 # Probamos funcionalidad de la clase base_matrix
 a = matrix.matrix(5,3)
 x = a.getFractionalDigits()
@@ -22,3 +22,13 @@ b = matrix.matrix([1.0,2.5,3.3])
 print("El tamaño de la matriz b: ", b.size())
 print("Las filas de la matriz b: ", b.rows())
 print("Las columnas de la matriz b: ", b.columns())
+
+c = matrix.matrix([[1,2,4,2],[2,3,1,1]])
+
+print("El tamaño de la matriz c: ", c.size())
+print("Las filas de la matriz c: ", c.rows())
+print("Las columnas de la matriz c: ", c.columns())
+
+
+
+#matrix.output(sys.stdout,c)

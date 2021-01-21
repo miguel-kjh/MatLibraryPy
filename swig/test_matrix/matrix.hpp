@@ -46,7 +46,7 @@ namespace mat_lib
         matrix();
         matrix(size_t rows, size_t columns);
         matrix(vector<double> init);
-        /* matrix(vector<vector<double>> init); */
+        matrix(vector<vector<double>> init);
         
 
 
@@ -54,19 +54,32 @@ namespace mat_lib
         size_t rows() const { return rows__; }
         size_t columns() const { return columns__; }
 
+
+      double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
+      const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
+
+
     private:
         size_t rows__;
         size_t columns__;
         double* elements__;
 
-       /*  bool check_initilizer_list__(const vector<vector<double>>& init) {
-            auto column_size=init[0].size();
+        bool check_initilizer_list__(const vector<vector<double>>& init){
+            auto column_size=init.begin()[0].size();
             for(size_t i=1; i<init.size(); i++)
-                if(init[i].size()!=column_size) return false;
+            if(init.begin()[i].size()!=column_size) return false;
             return true;
-        } */
+        }
 
+            
+        size_t row_offset__(size_t i) const { return i*columns__; }
+        size_t offset__(size_t i,int j) const { return row_offset__(i)+j; }
+
+
+         
     };
+
+    ostream& output(ostream& os, const matrix& m);
 
 }
 

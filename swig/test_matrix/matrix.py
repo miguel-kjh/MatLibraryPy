@@ -122,6 +122,407 @@ class SwigPyIterator(object):
 # Register SwigPyIterator in _matrix:
 _matrix.SwigPyIterator_swigregister(SwigPyIterator)
 
+class ios_base(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+
+    def __init__(self, *args, **kwargs):
+        raise AttributeError("No constructor defined")
+    __repr__ = _swig_repr
+    erase_event = _matrix.ios_base_erase_event
+    imbue_event = _matrix.ios_base_imbue_event
+    copyfmt_event = _matrix.ios_base_copyfmt_event
+
+    def register_callback(self, __fn, __index):
+        return _matrix.ios_base_register_callback(self, __fn, __index)
+
+    def flags(self, *args):
+        return _matrix.ios_base_flags(self, *args)
+
+    def setf(self, *args):
+        return _matrix.ios_base_setf(self, *args)
+
+    def unsetf(self, __mask):
+        return _matrix.ios_base_unsetf(self, __mask)
+
+    def precision(self, *args):
+        return _matrix.ios_base_precision(self, *args)
+
+    def width(self, *args):
+        return _matrix.ios_base_width(self, *args)
+
+    @staticmethod
+    def sync_with_stdio(__sync=True):
+        return _matrix.ios_base_sync_with_stdio(__sync)
+
+    def imbue(self, __loc):
+        return _matrix.ios_base_imbue(self, __loc)
+
+    def getloc(self):
+        return _matrix.ios_base_getloc(self)
+
+    @staticmethod
+    def xalloc():
+        return _matrix.ios_base_xalloc()
+
+    def iword(self, __ix):
+        return _matrix.ios_base_iword(self, __ix)
+
+    def pword(self, __ix):
+        return _matrix.ios_base_pword(self, __ix)
+    __swig_destroy__ = _matrix.delete_ios_base
+
+# Register ios_base in _matrix:
+_matrix.ios_base_swigregister(ios_base)
+cvar = _matrix.cvar
+ios_base.boolalpha = _matrix.cvar.ios_base_boolalpha
+ios_base.dec = _matrix.cvar.ios_base_dec
+ios_base.fixed = _matrix.cvar.ios_base_fixed
+ios_base.hex = _matrix.cvar.ios_base_hex
+ios_base.internal = _matrix.cvar.ios_base_internal
+ios_base.left = _matrix.cvar.ios_base_left
+ios_base.oct = _matrix.cvar.ios_base_oct
+ios_base.right = _matrix.cvar.ios_base_right
+ios_base.scientific = _matrix.cvar.ios_base_scientific
+ios_base.showbase = _matrix.cvar.ios_base_showbase
+ios_base.showpoint = _matrix.cvar.ios_base_showpoint
+ios_base.showpos = _matrix.cvar.ios_base_showpos
+ios_base.skipws = _matrix.cvar.ios_base_skipws
+ios_base.unitbuf = _matrix.cvar.ios_base_unitbuf
+ios_base.uppercase = _matrix.cvar.ios_base_uppercase
+ios_base.adjustfield = _matrix.cvar.ios_base_adjustfield
+ios_base.basefield = _matrix.cvar.ios_base_basefield
+ios_base.floatfield = _matrix.cvar.ios_base_floatfield
+ios_base.badbit = _matrix.cvar.ios_base_badbit
+ios_base.eofbit = _matrix.cvar.ios_base_eofbit
+ios_base.failbit = _matrix.cvar.ios_base_failbit
+ios_base.goodbit = _matrix.cvar.ios_base_goodbit
+ios_base.app = _matrix.cvar.ios_base_app
+ios_base.ate = _matrix.cvar.ios_base_ate
+ios_base.binary = _matrix.cvar.ios_base_binary
+ios_base.ios_base_in = _matrix.cvar.ios_base_ios_base_in
+ios_base.out = _matrix.cvar.ios_base_out
+ios_base.trunc = _matrix.cvar.ios_base_trunc
+ios_base.beg = _matrix.cvar.ios_base_beg
+ios_base.cur = _matrix.cvar.ios_base_cur
+ios_base.end = _matrix.cvar.ios_base_end
+
+def ios_base_sync_with_stdio(__sync=True):
+    return _matrix.ios_base_sync_with_stdio(__sync)
+
+def ios_base_xalloc():
+    return _matrix.ios_base_xalloc()
+
+class ios(ios_base):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def rdstate(self):
+        return _matrix.ios_rdstate(self)
+
+    def clear(self, *args):
+        return _matrix.ios_clear(self, *args)
+
+    def setstate(self, __state):
+        return _matrix.ios_setstate(self, __state)
+
+    def good(self):
+        return _matrix.ios_good(self)
+
+    def eof(self):
+        return _matrix.ios_eof(self)
+
+    def fail(self):
+        return _matrix.ios_fail(self)
+
+    def bad(self):
+        return _matrix.ios_bad(self)
+
+    def exceptions(self, *args):
+        return _matrix.ios_exceptions(self, *args)
+
+    def __init__(self, __sb):
+        _matrix.ios_swiginit(self, _matrix.new_ios(__sb))
+    __swig_destroy__ = _matrix.delete_ios
+
+    def tie(self, *args):
+        return _matrix.ios_tie(self, *args)
+
+    def rdbuf(self, *args):
+        return _matrix.ios_rdbuf(self, *args)
+
+    def copyfmt(self, __rhs):
+        return _matrix.ios_copyfmt(self, __rhs)
+
+    def fill(self, *args):
+        return _matrix.ios_fill(self, *args)
+
+    def imbue(self, __loc):
+        return _matrix.ios_imbue(self, __loc)
+
+    def narrow(self, __c, __dfault):
+        return _matrix.ios_narrow(self, __c, __dfault)
+
+    def widen(self, __c):
+        return _matrix.ios_widen(self, __c)
+
+# Register ios in _matrix:
+_matrix.ios_swigregister(ios)
+
+class string(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def length(self):
+        return _matrix.string_length(self)
+
+    def max_size(self):
+        return _matrix.string_max_size(self)
+
+    def capacity(self):
+        return _matrix.string_capacity(self)
+
+    def reserve(self, __res_arg=0):
+        return _matrix.string_reserve(self, __res_arg)
+
+    def copy(self, __s, __n, __pos=0):
+        return _matrix.string_copy(self, __s, __n, __pos)
+
+    def c_str(self):
+        return _matrix.string_c_str(self)
+
+    def find(self, *args):
+        return _matrix.string_find(self, *args)
+
+    def rfind(self, *args):
+        return _matrix.string_rfind(self, *args)
+
+    def find_first_of(self, *args):
+        return _matrix.string_find_first_of(self, *args)
+
+    def find_last_of(self, *args):
+        return _matrix.string_find_last_of(self, *args)
+
+    def find_first_not_of(self, *args):
+        return _matrix.string_find_first_not_of(self, *args)
+
+    def find_last_not_of(self, *args):
+        return _matrix.string_find_last_not_of(self, *args)
+
+    def substr(self, *args):
+        return _matrix.string_substr(self, *args)
+
+    def empty(self):
+        return _matrix.string_empty(self)
+
+    def size(self):
+        return _matrix.string_size(self)
+
+    def swap(self, v):
+        return _matrix.string_swap(self, v)
+
+    def begin(self):
+        return _matrix.string_begin(self)
+
+    def end(self):
+        return _matrix.string_end(self)
+
+    def rbegin(self):
+        return _matrix.string_rbegin(self)
+
+    def rend(self):
+        return _matrix.string_rend(self)
+
+    def get_allocator(self):
+        return _matrix.string_get_allocator(self)
+
+    def erase(self, *args):
+        return _matrix.string_erase(self, *args)
+
+    def __init__(self, *args):
+        _matrix.string_swiginit(self, _matrix.new_string(*args))
+
+    def assign(self, *args):
+        return _matrix.string_assign(self, *args)
+
+    def resize(self, *args):
+        return _matrix.string_resize(self, *args)
+
+    def iterator(self):
+        return _matrix.string_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _matrix.string___nonzero__(self)
+
+    def __bool__(self):
+        return _matrix.string___bool__(self)
+
+    def __len__(self):
+        return _matrix.string___len__(self)
+
+    def __getslice__(self, i, j):
+        return _matrix.string___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _matrix.string___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _matrix.string___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _matrix.string___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _matrix.string___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _matrix.string___setitem__(self, *args)
+
+    def insert(self, *args):
+        return _matrix.string_insert(self, *args)
+
+    def replace(self, *args):
+        return _matrix.string_replace(self, *args)
+
+    def __iadd__(self, v):
+        return _matrix.string___iadd__(self, v)
+
+    def __add__(self, v):
+        return _matrix.string___add__(self, v)
+
+    def __radd__(self, v):
+        return _matrix.string___radd__(self, v)
+
+    def __str__(self):
+        return _matrix.string___str__(self)
+
+    def __rlshift__(self, out):
+        return _matrix.string___rlshift__(self, out)
+
+    def __eq__(self, v):
+        return _matrix.string___eq__(self, v)
+
+    def __ne__(self, v):
+        return _matrix.string___ne__(self, v)
+
+    def __gt__(self, v):
+        return _matrix.string___gt__(self, v)
+
+    def __lt__(self, v):
+        return _matrix.string___lt__(self, v)
+
+    def __ge__(self, v):
+        return _matrix.string___ge__(self, v)
+
+    def __le__(self, v):
+        return _matrix.string___le__(self, v)
+    __swig_destroy__ = _matrix.delete_string
+
+# Register string in _matrix:
+_matrix.string_swigregister(string)
+string.npos = _matrix.cvar.string_npos
+
+class ostream(ios):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self, __sb):
+        _matrix.ostream_swiginit(self, _matrix.new_ostream(__sb))
+    __swig_destroy__ = _matrix.delete_ostream
+
+    def __lshift__(self, *args):
+        return _matrix.ostream___lshift__(self, *args)
+
+    def put(self, __c):
+        return _matrix.ostream_put(self, __c)
+
+    def write(self, __s, __n):
+        return _matrix.ostream_write(self, __s, __n)
+
+    def flush(self):
+        return _matrix.ostream_flush(self)
+
+    def tellp(self):
+        return _matrix.ostream_tellp(self)
+
+    def seekp(self, *args):
+        return _matrix.ostream_seekp(self, *args)
+
+# Register ostream in _matrix:
+_matrix.ostream_swigregister(ostream)
+cin = cvar.cin
+cout = cvar.cout
+cerr = cvar.cerr
+clog = cvar.clog
+
+class istream(ios):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self, __sb):
+        _matrix.istream_swiginit(self, _matrix.new_istream(__sb))
+    __swig_destroy__ = _matrix.delete_istream
+
+    def __rshift__(self, *args):
+        return _matrix.istream___rshift__(self, *args)
+
+    def gcount(self):
+        return _matrix.istream_gcount(self)
+
+    def get(self, *args):
+        return _matrix.istream_get(self, *args)
+
+    def getline(self, *args):
+        return _matrix.istream_getline(self, *args)
+
+    def ignore(self, *args):
+        return _matrix.istream_ignore(self, *args)
+
+    def peek(self):
+        return _matrix.istream_peek(self)
+
+    def read(self, __s, __n):
+        return _matrix.istream_read(self, __s, __n)
+
+    def readsome(self, __s, __n):
+        return _matrix.istream_readsome(self, __s, __n)
+
+    def putback(self, __c):
+        return _matrix.istream_putback(self, __c)
+
+    def unget(self):
+        return _matrix.istream_unget(self)
+
+    def sync(self):
+        return _matrix.istream_sync(self)
+
+    def tellg(self):
+        return _matrix.istream_tellg(self)
+
+    def seekg(self, *args):
+        return _matrix.istream_seekg(self, *args)
+
+# Register istream in _matrix:
+_matrix.istream_swigregister(istream)
+
+class iostream(istream, ostream):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def __init__(self, __sb):
+        _matrix.iostream_swiginit(self, _matrix.new_iostream(__sb))
+    __swig_destroy__ = _matrix.delete_iostream
+
+# Register iostream in _matrix:
+_matrix.iostream_swigregister(iostream)
+
+endl_cb_ptr = _matrix.endl_cb_ptr
+endl = _matrix.endl
+ends_cb_ptr = _matrix.ends_cb_ptr
+ends = _matrix.ends
+flush_cb_ptr = _matrix.flush_cb_ptr
+flush = _matrix.flush
 class line(object):
     thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
     __repr__ = _swig_repr
@@ -228,6 +629,112 @@ class line(object):
 # Register line in _matrix:
 _matrix.line_swigregister(line)
 
+class vector(object):
+    thisown = property(lambda x: x.this.own(), lambda x, v: x.this.own(v), doc="The membership flag")
+    __repr__ = _swig_repr
+
+    def iterator(self):
+        return _matrix.vector_iterator(self)
+    def __iter__(self):
+        return self.iterator()
+
+    def __nonzero__(self):
+        return _matrix.vector___nonzero__(self)
+
+    def __bool__(self):
+        return _matrix.vector___bool__(self)
+
+    def __len__(self):
+        return _matrix.vector___len__(self)
+
+    def __getslice__(self, i, j):
+        return _matrix.vector___getslice__(self, i, j)
+
+    def __setslice__(self, *args):
+        return _matrix.vector___setslice__(self, *args)
+
+    def __delslice__(self, i, j):
+        return _matrix.vector___delslice__(self, i, j)
+
+    def __delitem__(self, *args):
+        return _matrix.vector___delitem__(self, *args)
+
+    def __getitem__(self, *args):
+        return _matrix.vector___getitem__(self, *args)
+
+    def __setitem__(self, *args):
+        return _matrix.vector___setitem__(self, *args)
+
+    def pop(self):
+        return _matrix.vector_pop(self)
+
+    def append(self, x):
+        return _matrix.vector_append(self, x)
+
+    def empty(self):
+        return _matrix.vector_empty(self)
+
+    def size(self):
+        return _matrix.vector_size(self)
+
+    def swap(self, v):
+        return _matrix.vector_swap(self, v)
+
+    def begin(self):
+        return _matrix.vector_begin(self)
+
+    def end(self):
+        return _matrix.vector_end(self)
+
+    def rbegin(self):
+        return _matrix.vector_rbegin(self)
+
+    def rend(self):
+        return _matrix.vector_rend(self)
+
+    def clear(self):
+        return _matrix.vector_clear(self)
+
+    def get_allocator(self):
+        return _matrix.vector_get_allocator(self)
+
+    def pop_back(self):
+        return _matrix.vector_pop_back(self)
+
+    def erase(self, *args):
+        return _matrix.vector_erase(self, *args)
+
+    def __init__(self, *args):
+        _matrix.vector_swiginit(self, _matrix.new_vector(*args))
+
+    def push_back(self, x):
+        return _matrix.vector_push_back(self, x)
+
+    def front(self):
+        return _matrix.vector_front(self)
+
+    def back(self):
+        return _matrix.vector_back(self)
+
+    def assign(self, n, x):
+        return _matrix.vector_assign(self, n, x)
+
+    def resize(self, *args):
+        return _matrix.vector_resize(self, *args)
+
+    def insert(self, *args):
+        return _matrix.vector_insert(self, *args)
+
+    def reserve(self, n):
+        return _matrix.vector_reserve(self, n)
+
+    def capacity(self):
+        return _matrix.vector_capacity(self)
+    __swig_destroy__ = _matrix.delete_vector
+
+# Register vector in _matrix:
+_matrix.vector_swigregister(vector)
+
 scientific = _matrix.scientific
 fixed = _matrix.fixed
 class base_matrix(object):
@@ -273,5 +780,8 @@ class matrix(base_matrix):
 # Register matrix in _matrix:
 _matrix.matrix_swigregister(matrix)
 
+
+def output(os, m):
+    return _matrix.output(os, m)
 
 
