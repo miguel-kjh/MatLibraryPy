@@ -210,6 +210,43 @@ bool matrix::operator==(const matrix& m) const
 }
 
 
+matrix mat_lib::operator+( const matrix& a, const matrix& b)
+{
+  if((a.rows()!=b.rows()) || (a.columns()!=b.columns()))
+  {
+    ostringstream str_stream;
+    str_stream<<"size mismatch! cannot add matrices ("
+      <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+    throw invalid_argument(str_stream.str());
+  }
+
+  matrix c = a;
+  return c+=b;
+}
+
+
+/* matrix matrix::operator-( const matrix& b)
+  {
+    if((rows__!=b.rows()) || (columns__!=b.columns()))
+    {
+      ostringstream str_stream;
+      str_stream<<"size mismatch! cannot substract matrices ("
+        <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+      throw invalid_argument(str_stream.str());
+    }
+
+    matrix c = *this;
+    return c-=b;
+  }
+ */
+
+
+/*
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ""
+                 matrix utils
+>>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< "
+*/
+
 
 void matrix::save_as(const string& file_name) const {
   ofstream ofs(file_name);
@@ -246,28 +283,6 @@ ostream& mat_lib::operator<<(ostream& os, const matrix& m)
 
     return os;
 }
-
-/* ostream& mat_lib::output(ostream& os, const matrix& m)
-  {
-    static const char* prefix="  ";
-    size_t i,j;
-
-
-
-    os<<"mat_lib::matrix["<<m.rows()<<"x"<<m.columns()<<"]{";
-    for(i=0; i<m.rows(); i++)
-    {
-      os<<"\n"<<prefix;
-      for(j=0; j<m.columns()-1; j++) os<<m[i][j]<<", ";
-      if (m.getFormat() == mat_lib::fixed)
-          os << std::fixed << setprecision(m.getFractionalDigits()) << m[i][j];
-      else
-          os << std::scientific << setprecision(m.getFractionalDigits()) << m[i][j];
-    }
-    os<<"\n}";
-
-    return os;
-  } */
 
 
 

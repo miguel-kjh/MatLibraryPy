@@ -26,7 +26,6 @@ namespace mat_lib
         fixed
     };
 
-  //template<typename T>
     class base_matrix {
     public:
         
@@ -48,8 +47,20 @@ namespace mat_lib
         matrix(vector<double> init);
         matrix(vector<vector<double>> init);
         explicit matrix(const string& file_name);
-        
 
+        matrix(const matrix& m) // copy constructor
+        : elements__{new double[m.size()]}
+        { copy_elements__(m); }
+
+        matrix(matrix&& m)// move constructor
+        : rows__{m.rows__},
+            columns__{m.columns__},
+            elements__{m.elements__}
+        {
+            m.elements__=nullptr;
+            m.rows__=m.columns__=0;
+        }
+        
 
         size_t size() const { return rows__*columns__; }
         size_t rows() const { return rows__; }
@@ -62,7 +73,6 @@ namespace mat_lib
         matrix& operator*=(double scalar);
         matrix& operator/=(double scalar);
         bool operator==(const matrix& m) const;
-
 
         double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
         const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
@@ -95,11 +105,11 @@ namespace mat_lib
          
     };
 
-    
+    matrix operator+( const matrix& a, const matrix& b);
 
-    //ostream& output(ostream& os, const matrix& m);
     ostream& operator<<(ostream& os, const matrix& m);
     void output(const matrix& m);
+    
 
 }
 

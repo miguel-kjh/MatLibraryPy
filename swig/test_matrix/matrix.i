@@ -47,15 +47,21 @@ namespace mat_lib {
         matrix& operator*=(double scalar);
         matrix& operator/=(double scalar);
         bool operator==(const matrix& m) const;
+        
 
         void save_as(const std::string& file_name);
         
+        
     };
 
-    //ostream& output(ostream& os, const matrix& m);
-    void output(const matrix& m);
 
+    void output(const matrix& m);
+    //matrix operator+(const matrix& a, const matrix& b);
+   
+    matrix operator+( const matrix& a, const matrix& b);
    
 
 }
 
+
+%rename(__add__) matrix::operator+;

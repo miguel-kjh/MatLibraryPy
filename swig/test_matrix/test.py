@@ -1,5 +1,4 @@
 import matrix
-import sys
 # Probamos funcionalidad de la clase base_matrix
 a = matrix.matrix(5,3)
 x = a.getFractionalDigits()
@@ -60,3 +59,9 @@ c.save_as("output.txt")
 load_matrix = matrix.matrix("output.txt")
 
 matrix.output(load_matrix)
+
+test_sum = matrix.matrix([[0,0,0,0],[0,0,0,0]])
+
+test_sum = matrix.__add__(c,c_subs)
+
+matrix.output(test_sum)

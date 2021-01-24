@@ -404,4 +404,7 @@ _matrix.matrix_swigregister(matrix)
 def output(m):
     return _matrix.output(m)
 
+def __add__(a, b):
+    return _matrix.__add__(a, b)
+
 

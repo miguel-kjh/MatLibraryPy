@@ -10121,6 +10121,44 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap___add__(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = 0 ;
+  mat_lib::matrix *arg2 = 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  void *argp2 = 0 ;
+  int res2 = 0 ;
+  PyObject *swig_obj[2] ;
+  mat_lib::matrix result;
+  
+  if (!SWIG_Python_UnpackTuple(args, "__add__", 2, 2, swig_obj)) SWIG_fail;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "__add__" "', argument " "1"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  if (!argp1) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "1"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  res2 = SWIG_ConvertPtr(swig_obj[1], &argp2, SWIGTYPE_p_mat_lib__matrix,  0  | 0);
+  if (!SWIG_IsOK(res2)) {
+    SWIG_exception_fail(SWIG_ArgError(res2), "in method '" "__add__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  if (!argp2) {
+    SWIG_exception_fail(SWIG_ValueError, "invalid null reference " "in method '" "__add__" "', argument " "2"" of type '" "mat_lib::matrix const &""'"); 
+  }
+  arg2 = reinterpret_cast< mat_lib::matrix * >(argp2);
+  result = mat_lib::operator +((mat_lib::matrix const &)*arg1,(mat_lib::matrix const &)*arg2);
+  resultobj = SWIG_NewPointerObj((new mat_lib::matrix(static_cast< const mat_lib::matrix& >(result))), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  PyErr_Clear();
+  Py_INCREF(Py_NotImplemented);
+  return Py_NotImplemented;
+}
+
+
 static PyMethodDef SwigMethods[] = {
 	 { "SWIG_PyInstanceMethod_New", SWIG_PyInstanceMethod_New, METH_O, NULL},
 	 { "delete_SwigPyIterator", _wrap_delete_SwigPyIterator, METH_O, NULL},
@@ -10233,6 +10271,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "matrix_swigregister", matrix_swigregister, METH_O, NULL},
 	 { "matrix_swiginit", matrix_swiginit, METH_VARARGS, NULL},
 	 { "output", _wrap_output, METH_O, NULL},
+	 { "__add__", _wrap___add__, METH_VARARGS, NULL},
 	 { NULL, NULL, 0, NULL }
 };
 
