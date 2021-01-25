@@ -106,6 +106,13 @@ namespace mat_lib
     };
 
     matrix operator+( const matrix& a, const matrix& b);
+    matrix operator-( const matrix& a, const matrix& b);
+    matrix operator*(const matrix& a, const matrix& b);
+    matrix operator*(const matrix& m, double scalar);
+    matrix operator*(double scalar, const matrix& m);
+    matrix operator/(const matrix& m, double scalar);  
+    matrix operator/(double scalar,const matrix& m);
+
 
     ostream& operator<<(ostream& os, const matrix& m);
     void output(const matrix& m);

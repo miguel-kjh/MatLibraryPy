@@ -6,6 +6,10 @@
 %include "std_vector.i"
 %include "std_string.i"
 
+
+%ignore mat_lib::operator/;
+%rename(__div__) mat_lib::operator/;
+
 namespace std {
     %template(line) vector <double>;
     %template(vector) vector<vector<double>>;
@@ -56,12 +60,15 @@ namespace mat_lib {
 
 
     void output(const matrix& m);
-    //matrix operator+(const matrix& a, const matrix& b);
-   
+
     matrix operator+( const matrix& a, const matrix& b);
+    matrix operator-( const matrix& a, const matrix& b);
+    matrix operator*(const matrix& a, const matrix& b);
+    matrix operator*(const matrix& m, double scalar);
+    matrix operator*(double scalar, const matrix& m);
+    matrix operator/(const matrix& m, double scalar);  
+    matrix operator/(double scalar,const matrix& m);
    
 
 }
 
-
-%rename(__add__) matrix::operator+;

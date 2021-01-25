@@ -64,4 +64,41 @@ test_sum = matrix.matrix([[0,0,0,0],[0,0,0,0]])
 
 test_sum = matrix.__add__(c,c_subs)
 
+print("\nSe suma una matriz con valores 100 con otra con valores 100")
 matrix.output(test_sum)
+
+test_sum = matrix.__sub__(test_sum,c)
+
+print("\nSe resta a la matrix con valores 200, una matriz con valores 100: ")
+matrix.output(test_sum)
+
+test_mul = matrix.matrix([[5,5,5,5],[5,5,5,5]])
+
+test_mul = matrix.__mul__(5,test_mul)
+
+print("\nSe multiplica una matrix 2x4 definida con valor 5 por 5: ")
+matrix.output(test_mul)
+
+test_mul = matrix.__mul__(test_mul,2)
+
+print("\nEl resultado de multiplicar la matrix anterior por 2: ")
+matrix.output(test_mul)
+
+test_mult_matrix = matrix.matrix([[2,2],[2,2],[2,2],[2,2]])
+
+print("\nSe multiplica la matriz anterior con una matriz 4x2 con valores 2 ")
+test_mul = matrix.__mul__(test_mul,test_mult_matrix)
+
+matrix.output(test_mul)
+
+test_div = matrix.matrix([[10,10],[10,10]])
+
+print("\nMatriz de valores 10, dividido entre 2: ")
+test_div = matrix.__div__(test_div,2)
+
+matrix.output(test_div)
+
+print("\nMatriz anterior, dividido entre 2: ")
+test_div = matrix.__div__(2,test_div)
+
+matrix.output(test_div)

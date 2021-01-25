@@ -225,20 +225,71 @@ matrix mat_lib::operator+( const matrix& a, const matrix& b)
 }
 
 
-/* matrix matrix::operator-( const matrix& b)
+matrix mat_lib::operator-( const matrix& a, const matrix& b)
+{
+  if((a.rows()!=b.rows()) || (a.columns()!=b.columns()))
   {
-    if((rows__!=b.rows()) || (columns__!=b.columns()))
+    ostringstream str_stream;
+    str_stream<<"size mismatch! cannot substract matrices ("
+      <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+    throw invalid_argument(str_stream.str());
+  }
+
+  matrix c = a;
+  return c-=b;
+}
+
+matrix mat_lib::operator*(const matrix& a, const matrix& b)
+{
+  if(a.columns()!=b.rows())
+  {
+    ostringstream str_stream;
+    str_stream<<"size mismatch! cannot multiple matrices ("
+      <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+    throw invalid_argument(str_stream.str());
+  }
+
+  matrix c(a.rows(),b.columns());
+
+  for(size_t i=0; i<c.rows(); i++)
+    for(size_t j=0; j<c.columns(); j++)
     {
-      ostringstream str_stream;
-      str_stream<<"size mismatch! cannot substract matrices ("
-        <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
-      throw invalid_argument(str_stream.str());
+      c[i][j]=0;
+      for(size_t k=0; k<a.columns(); k++)
+        c[i][j]+=a[i][k]*b[k][j];
     }
 
-    matrix c = *this;
-    return c-=b;
-  }
- */
+  return c;
+}
+
+matrix mat_lib::operator*(const matrix& m, double scalar) 
+{ 
+  matrix r{m}; 
+  r*=scalar; 
+  return r; 
+}
+
+matrix mat_lib::operator*(double scalar, const matrix& m) 
+{ 
+  matrix r{m}; 
+  r*=scalar; 
+  return r; 
+}
+
+matrix mat_lib::operator/(const matrix& m, double scalar) 
+{ 
+  matrix r{m}; 
+  r/=scalar; 
+  return r; 
+}
+
+matrix mat_lib::operator/(double scalar,const matrix& m) 
+{ 
+  matrix r{m}; 
+  r/=scalar; 
+  return r; 
+}
+
 
 
 /*

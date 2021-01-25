@@ -407,4 +407,13 @@ def output(m):
 def __add__(a, b):
     return _matrix.__add__(a, b)
 
+def __sub__(a, b):
+    return _matrix.__sub__(a, b)
+
+def __mul__(*args):
+    return _matrix.__mul__(*args)
+
+def __div__(*args):
+    return _matrix.__div__(*args)
+
 
