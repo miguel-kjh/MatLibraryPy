@@ -51,8 +51,8 @@ namespace mat_lib {
         matrix& operator*=(double scalar);
         matrix& operator/=(double scalar);
         bool operator==(const matrix& m) const;
-        
 
+        matrix inverse();
         void save_as(const std::string& file_name);
         
         

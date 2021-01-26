@@ -292,6 +292,90 @@ matrix mat_lib::operator/(double scalar,const matrix& m)
 
 
 
+
+matrix matrix::inverse() {
+
+    if( (rows() != columns()) || rows()*columns() <= 1 ) {
+      ostringstream str_stream;
+      str_stream<<"Must be a square matrix or must be a non-singular matrix ("
+        <<__func__<<"() in "<<__FILE__<<":"<<__LINE__<<")";
+      throw out_of_range(str_stream.str());
+    }
+  
+    int order = rows();
+
+
+    // Copy the elements
+    double** matrix_elements = new double*[this->size() + 2];
+
+    for(int i = 0; i < this->size(); i++)
+      matrix_elements[i] = new double[this->size() + 2];
+
+    for(int i = 0; i < rows(); i++)
+      for(int j = 0; j < 2 * columns(); j++)
+        matrix_elements[i][j] = 0;
+
+    for(int i = 0; i < rows(); i++)
+      for(int j = 0; j < columns(); j++)
+        matrix_elements[i][j] = elements__[offset__(i,j)];
+
+    // create the inverse matrix
+    matrix inverse_matrix (rows(), columns());
+    
+    double temp;
+    
+    for(int i = 0; i < order; i++) {
+      for (int j = 0; j < 2 * order; j++) {
+        if (j == (i + order)) {
+          matrix_elements[i][j] = 1;
+          
+        }
+      }
+    }
+
+    for(int i = order -1; i > 0; i--) {
+      if (matrix_elements[i - 1][0] < matrix_elements[i][0]) {
+        double* temp = matrix_elements[i];
+        matrix_elements[i] = matrix_elements[i - 1];
+        matrix_elements[i - 1] = temp;
+      }
+    }
+
+
+    for (int i = 0; i < order; i++) {
+      for (int j = 0; j < order; j++) {
+        if (j != i) {
+          temp = matrix_elements[j][i] / matrix_elements[i][i];
+          for(int k = 0; k < 2 * order; k++) 
+            matrix_elements[j][k] -= matrix_elements[i][k] * temp;
+        
+        } 
+      }
+    }
+
+    for(int i = 0; i < order; i++) {
+      temp = matrix_elements[i][i];
+      for(int j = 0; j < 2 * order; j++) {
+        matrix_elements[i][j] = matrix_elements[i][j] / temp;
+        
+      }
+    }
+
+    for(int i = 0; i < order; i++)
+      for(int j = order; j < 2*order; j++) {
+        inverse_matrix[i][j - order] = matrix_elements[i][j];
+      }
+
+
+
+    delete [] matrix_elements;
+
+    return inverse_matrix;
+
+  }
+
+
+
 /*
 >>>>>>>>>>>>>>>>>>>>>>>>><<<<<<<<<<<<<<<<<<<<<<<<<<<<<<<< ""
                  matrix utils

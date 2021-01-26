@@ -393,6 +393,9 @@ class matrix(base_matrix):
     def __eq__(self, m):
         return _matrix.matrix___eq__(self, m)
 
+    def inverse(self):
+        return _matrix.matrix_inverse(self)
+
     def save_as(self, file_name):
         return _matrix.matrix_save_as(self, file_name)
     __swig_destroy__ = _matrix.delete_matrix

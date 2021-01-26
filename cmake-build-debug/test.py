@@ -115,7 +115,7 @@ def test_time():
 			tr = 0
 			for _ in range(repeat):
 				t0 = time()
-				m.saveAs("test.matrix")
+				m.inv()
 				tr += time() - t0
 			l.append(tr / repeat)
 		return l

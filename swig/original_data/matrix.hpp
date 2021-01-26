@@ -399,6 +399,7 @@ namespace mat_lib
             for (int j = 0; j < 2 * order; j++) {
                 if (j == (i + order))
                     elementsPointer[i][j] = 1;
+                    
             }
         }
 

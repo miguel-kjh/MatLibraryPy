@@ -74,6 +74,8 @@ namespace mat_lib
         matrix& operator/=(double scalar);
         bool operator==(const matrix& m) const;
 
+        matrix inverse();
+
         double* operator[](size_t i) { return &(elements__[row_offset__(i)]); }
         const double* operator[](size_t i) const { return &(elements__[row_offset__(i)]); }
 
@@ -95,6 +97,22 @@ namespace mat_lib
             rows__=m.rows__; columns__=m.columns__;
             for(size_t i=0; i<rows__; i++) 
             for(size_t j=0; j<columns__; j++) elements__[offset__(i,j)]=m.elements__[offset__(i,j)]; 
+        }
+
+        double** get_elements_pointer()
+        {
+            size_t size = rows()*columns() + 2;
+            double** matrix = new double*[size];
+            for (size_t i = 0; i < size; i++)
+                matrix[i] = new double[size];
+
+            for (size_t i = 0; i < rows(); ++i) {
+                for (size_t j = 0; j < columns(); ++j) {
+                    matrix[i][j] = elements__[offset__(i,j)];
+                }
+            }
+
+            return matrix;
         }
 
             

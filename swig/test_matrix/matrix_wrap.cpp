@@ -10027,6 +10027,29 @@ fail:
 }
 
 
+SWIGINTERN PyObject *_wrap_matrix_inverse(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
+  PyObject *resultobj = 0;
+  mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
+  void *argp1 = 0 ;
+  int res1 = 0 ;
+  PyObject *swig_obj[1] ;
+  mat_lib::matrix result;
+  
+  if (!args) SWIG_fail;
+  swig_obj[0] = args;
+  res1 = SWIG_ConvertPtr(swig_obj[0], &argp1,SWIGTYPE_p_mat_lib__matrix, 0 |  0 );
+  if (!SWIG_IsOK(res1)) {
+    SWIG_exception_fail(SWIG_ArgError(res1), "in method '" "matrix_inverse" "', argument " "1"" of type '" "mat_lib::matrix *""'"); 
+  }
+  arg1 = reinterpret_cast< mat_lib::matrix * >(argp1);
+  result = (arg1)->inverse();
+  resultobj = SWIG_NewPointerObj((new mat_lib::matrix(static_cast< const mat_lib::matrix& >(result))), SWIGTYPE_p_mat_lib__matrix, SWIG_POINTER_OWN |  0 );
+  return resultobj;
+fail:
+  return NULL;
+}
+
+
 SWIGINTERN PyObject *_wrap_matrix_save_as(PyObject *SWIGUNUSEDPARM(self), PyObject *args) {
   PyObject *resultobj = 0;
   mat_lib::matrix *arg1 = (mat_lib::matrix *) 0 ;
@@ -10575,6 +10598,7 @@ static PyMethodDef SwigMethods[] = {
 	 { "matrix___imul__", _wrap_matrix___imul__, METH_VARARGS, NULL},
 	 { "matrix___itruediv__", _wrap_matrix___itruediv__, METH_VARARGS, NULL},
 	 { "matrix___eq__", _wrap_matrix___eq__, METH_VARARGS, NULL},
+	 { "matrix_inverse", _wrap_matrix_inverse, METH_O, NULL},
 	 { "matrix_save_as", _wrap_matrix_save_as, METH_VARARGS, NULL},
 	 { "delete_matrix", _wrap_delete_matrix, METH_O, NULL},
 	 { "matrix_swigregister", matrix_swigregister, METH_O, NULL},
