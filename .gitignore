@@ -33,3 +33,7 @@
 
 # Swig build files
 /swig/test_matrix/build
+
+# ides
+.vscode
+.idea

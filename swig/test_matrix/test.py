@@ -186,7 +186,7 @@ def test_time():
 
 
     df = {}
-    rag = list(range(10,150,10))
+    rag = list(range(5,150,5))
     df['Size'] = rag
     df['Mult'] = get_time_mult(rag)
     df['Sum']  = get_time_sum(rag)

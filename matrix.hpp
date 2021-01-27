@@ -414,52 +414,77 @@ namespace mat_lib
     template<typename T>
     matrix<T> matrix<T>::inverse() {
         if(rows() != columns() || rows()*columns() <= 1)
-            throw logic_error("Inverse operation not possible, the elementsPointer need be square and the order grater than one");
+            throw logic_error("Inverse operation not possible, "
+                              "the elementsPointer need be square and the order grater than one");
 
-        T** elementsPointer = get_elements_pointer();
-        std::size_t order = rows();
-        for (int i = 0; i < order; i++) {
+        int order = rows();
+
+        // Copy the elements
+        T** matrix_elements = new T*[this->size() + 2];
+
+        for(int i = 0; i < this->size(); i++)
+            matrix_elements[i] = new double[this->size() + 2];
+
+        for(int i = 0; i < rows(); i++)
+            for(int j = 0; j < 2 * columns(); j++)
+                matrix_elements[i][j] = 0;
+
+        for(int i = 0; i < rows(); i++)
+            for(int j = 0; j < columns(); j++)
+                matrix_elements[i][j] = elements__[offset__(i,j)];
+
+        // create the inverse matrix
+        matrix<T> inverse_matrix (rows(), columns());
+
+        double temp;
+
+        for(int i = 0; i < order; i++) {
             for (int j = 0; j < 2 * order; j++) {
-                if (j == (i + order))
-                    elementsPointer[i][j] = 1;
-            }
-        }
+                if (j == (i + order)) {
+                    matrix_elements[i][j] = 1;
 
-        for (int i = order - 1; i > 0; i--) {
-            if (elementsPointer[i - 1][0] < elementsPointer[i][0]) {
-                T* temp = elementsPointer[i];
-                elementsPointer[i] = elementsPointer[i - 1];
-                elementsPointer[i - 1] = temp;
-            }
-        }
-
-        T temp;
-        for (int i = 0; i < order; i++) {
-            for (int j = 0; j < order; j++) {
-                if (j != i) {
-                    temp = elementsPointer[j][i] / elementsPointer[i][i];
-                    for (int k = 0; k < 2 * order; k++) {
-                        elementsPointer[j][k] -= elementsPointer[i][k] * temp;
-                    }
                 }
             }
         }
 
+        for(int i = order -1; i > 0; i--) {
+            if (matrix_elements[i - 1][0] < matrix_elements[i][0]) {
+                double* temp = matrix_elements[i];
+                matrix_elements[i] = matrix_elements[i - 1];
+                matrix_elements[i - 1] = temp;
+            }
+        }
+
+
         for (int i = 0; i < order; i++) {
-            temp = elementsPointer[i][i];
-            for (int j = 0; j < 2 * order; j++) {
-                elementsPointer[i][j] = elementsPointer[i][j] / temp;
+            for (int j = 0; j < order; j++) {
+                if (j != i) {
+                    temp = matrix_elements[j][i] / matrix_elements[i][i];
+                    for(int k = 0; k < 2 * order; k++)
+                        matrix_elements[j][k] -= matrix_elements[i][k] * temp;
+
+                }
             }
         }
 
-        matrix<T> inv (rows(), columns());
-        for (int i = 0; i < order; ++i) {
-            for (int j = order; j < 2*order; ++j) {
-                inv[i][j - order] = elementsPointer[i][j];
+        for(int i = 0; i < order; i++) {
+            temp = matrix_elements[i][i];
+            for(int j = 0; j < 2 * order; j++) {
+                matrix_elements[i][j] = matrix_elements[i][j] / temp;
+
             }
         }
 
-        return inv;
+        for(int i = 0; i < order; i++)
+            for(int j = order; j < 2*order; j++) {
+                inverse_matrix[i][j - order] = matrix_elements[i][j];
+            }
+
+
+
+        delete [] matrix_elements;
+
+        return inverse_matrix;
     }
 
     template<typename T>
