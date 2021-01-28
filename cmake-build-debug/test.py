@@ -1,4 +1,4 @@
-from MatLibraryPy import Matrix, Vector
+from MatLibraryPy import Matrix, Vector, Format
 import numpy as np
 from time import time
 import pandas as pd
@@ -11,18 +11,19 @@ def test_mat():
 
 	#m3 = Matrix([1,2,3,4])
 
-	t = m2.transpose()
-	print(m2)
 	print(m2.rows())
 	print(m2.columns())
 	print(m2.size())
-	print(t)
 
 	m2.saveAs("test.matrix")
 
 	m2 = Matrix("at.matrix")
 
+	m2.setFractionalDigits(2)
+
 	print(m2)
+
+	print(m2.transpose())
 
 	print(m2 + m2)
 
@@ -31,6 +32,8 @@ def test_mat():
 	print(5/m2)
 
 	inv = m2.inv()
+	inv.setFractionalDigits(2)
+	inv.setFormat(Format.scientific)
 	print(inv)
 
 	print(m2.get(1,0))
@@ -144,6 +147,6 @@ print(line, "test vector", line)
 test_vec()
 print(line, "test matrix", line)
 test_mat()
-test_time()
+#test_time()
  	
  

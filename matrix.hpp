@@ -615,7 +615,12 @@ namespace mat_lib
     for(i=0; i<m.rows(); i++)
     {
       os<<"\n"<<prefix;
-      for(j=0; j<m.columns()-1; j++) os<<m[i][j]<<", ";
+      for(j=0; j<m.columns()-1; j++) {
+          if (m.getFormat() == mat_lib::fixed)
+              os << std::fixed << setprecision(m.getFractionalDigits()) << m[i][j] << ", ";
+          else
+              os << std::scientific << setprecision(m.getFractionalDigits()) << m[i][j] << ", ";
+      }
       if (m.getFormat() == mat_lib::fixed)
           os << std::fixed << setprecision(m.getFractionalDigits()) << m[i][j];
       else
