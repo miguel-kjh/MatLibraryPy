@@ -32,6 +32,8 @@ BOOST_PYTHON_MODULE(MatLibraryPy)
         .def("set", &matrix<double>::set)
         .def("inv", &matrix<double>::inverse)
         .def("transpose", &matrix<double>::make_transpose)
+        .def("setFractionalDigits", &matrix<double>::setFractionalDigits)
+        .def("setFormat", &matrix<double>::setFormat)
         .def("saveAs", &matrix<double>::save_as)
     ;
 
@@ -47,6 +49,8 @@ BOOST_PYTHON_MODULE(MatLibraryPy)
         .def("isEmpty", &mat_lib::vector<double>::is_empty)
         .def("set", &mat_lib::vector<double>::set)
         .def("get", &mat_lib::vector<double>::get)
+        .def("setFractionalDigits", &mat_lib::vector<double>::setFractionalDigits)
+        .def("setFormat", &mat_lib::vector<double>::setFormat)
         .def(self + mat_lib::vector<double>())
         .def(self + double())
         .def(self - mat_lib::vector<double>())
@@ -60,5 +64,11 @@ BOOST_PYTHON_MODULE(MatLibraryPy)
         .def(self == mat_lib::vector<double>())
         .def(self /= mat_lib::vector<double>())
         .def(self != mat_lib::vector<double>())
+    ;
+
+    enum_<format>("Format")
+        .value("fixed", mat_lib::fixed)
+        .value("scientific", mat_lib::scientific)
+        .export_values()
     ;
 }

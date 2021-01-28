@@ -1,4 +1,7 @@
-from MatLibraryPy import Matrix, Vector
+from MatLibraryPy import Matrix, Vector, Format
+import numpy as np
+from time import time
+import pandas as pd
 
 def test_mat():
 
@@ -8,18 +11,19 @@ def test_mat():
 
 	#m3 = Matrix([1,2,3,4])
 
-	t = m2.transpose()
-	print(m2)
 	print(m2.rows())
 	print(m2.columns())
 	print(m2.size())
-	print(t)
 
-	m2.saveAs("v.vector")
+	m2.saveAs("test.matrix")
 
 	m2 = Matrix("at.matrix")
 
+	m2.setFractionalDigits(2)
+
 	print(m2)
+
+	print(m2.transpose())
 
 	print(m2 + m2)
 
@@ -28,6 +32,8 @@ def test_mat():
 	print(5/m2)
 
 	inv = m2.inv()
+	inv.setFractionalDigits(2)
+	inv.setFormat(Format.scientific)
 	print(inv)
 
 	print(m2.get(1,0))
@@ -62,6 +68,78 @@ def test_vec():
  	print(v1 + v2)
  	print("suma numero", v1 + 6)
  	print(v1 - v2)
+
+def test_time():
+
+	def get_time_mult(rag):
+		l = []
+		repeat = 10
+		for n in rag:
+			m = Matrix(list(np.random.rand(n,n)))
+			tr = 0
+			for _ in range(repeat):
+				t0 = time()
+				_ = m*m
+				tr += time() - t0
+			l.append(tr / repeat)
+		return l
+
+	def get_time_sum(rag):
+		l = []
+		repeat = 10
+		for n in rag:
+			m = Matrix(list(np.random.rand(n,n)))
+			tr = 0
+			for _ in range(repeat):
+				t0 = time()
+				_ = m+m
+				tr += time() - t0
+			l.append(tr / repeat)
+		return l
+
+	def get_time_save(rag):
+		l = []
+		repeat = 10
+		for n in rag:
+			m = Matrix(list(np.random.rand(n,n)))
+			tr = 0
+			for _ in range(repeat):
+				t0 = time()
+				m.saveAs("test.matrix")
+				tr += time() - t0
+			l.append(tr / repeat)
+		return l
+
+	def get_time_inv(rag):
+		l = []
+		repeat = 10
+		for n in rag:
+			m = Matrix(list(get_matrix(n)))
+			tr = 0
+			for _ in range(repeat):
+				t0 = time()
+				m.inv()
+				tr += time() - t0
+			l.append(tr / repeat)
+		return l
+
+	def get_matrix(n):
+		while True:
+			m = np.random.rand(n,n)
+			if np.linalg.det(m) != 0:
+				break
+		return m
+
+
+	df = {}
+	rag = list(range(5,150,5))
+	df['Size'] = rag
+	df['Mult'] = get_time_mult(rag)
+	df['Sum']  = get_time_sum(rag)
+	df['Inv']  = get_time_inv(rag)
+	df['Save'] = get_time_save(rag)
+	df = pd.DataFrame(df)
+	df.to_csv("pruebas_boost.csv")
  	
  	
 line = "#"*10 
@@ -69,5 +147,6 @@ print(line, "test vector", line)
 test_vec()
 print(line, "test matrix", line)
 test_mat()
+#test_time()
  	
  
