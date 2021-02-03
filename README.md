@@ -1,13 +1,8 @@
 # MatLibraryPy
 
-## Example Swig
-first --> sudo apt install swig
+In this repository there is a numerical library to operate with matrices and vectors in python. Its implementation is done in both Boost-python and swig, where a global comparison of these two ways of implementing an API for C ++ operations in Python is investigated.
 
-http://www.swig.org/tutorial.html
+## Libraries
 
-## Example boost
-
-cd cmake-build-debug
-cmake ..
-make
-python3 test.py
+* [Boost-python 1.7](https://www.boost.org/doc/libs/1_70_0/libs/python/doc/html/index.html)
+* [Swig](http://www.swig.org/)
