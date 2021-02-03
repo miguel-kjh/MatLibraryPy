@@ -5,4 +5,4 @@ In this repository there is a numerical library to operate with matrices and vec
 ## Libraries
 
 * [Boost-python 1.7](https://www.boost.org/doc/libs/1_70_0/libs/python/doc/html/index.html)
-* [Swig](http://www.swig.org/)
+* [Swig-4.0.2](http://www.swig.org/)
